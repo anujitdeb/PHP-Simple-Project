@@ -16,12 +16,26 @@
 
 <?php
 include "navbar.php";
+
+if (isset($_SESSION['errorMessage'])):
+    ?>
+    <div class='alert alert-danger alert-dismissible fade show' role='alert' style="width: 500px; margin-top: 5px; margin-left: 450px;">
+        <?php echo $_SESSION['errorMessage']; ?>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+        </button>
+    </div>
+    <?php
+    unset($_SESSION['errorMessage']); // Clear the message
+endif;
 ?>
 
 <div class="container my-5">
     <div class="text-center">
         <h1>Welcome To SUB Student Portal</h1>
-        <button class="btn btn-success" onclick="window.location.href='/php-simple-project/students.php'">View Students</button>
+        <button class="btn btn-success" onclick="window.location.href='/php-simple-project/students.php'">View
+            Students
+        </button>
     </div>
 </div>
 

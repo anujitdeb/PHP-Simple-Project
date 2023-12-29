@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session
+include "navbar.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,10 +14,6 @@ session_start(); // Start the session
     <title>Edit Student</title>
 </head>
 <body>
-
-<?php
-include "navbar.php";
-?>
 
 <div class="container my-5">
 

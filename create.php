@@ -1,3 +1,6 @@
+<?php
+include "navbar.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,14 +15,9 @@
 </head>
 <body>
 
-<?php
-include "navbar.php";
-?>
-
 <div class="container my-5">
 
     <?php
-    session_start(); // Start the session
 
     $servername = "localhost";
     $username = "root";

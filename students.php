@@ -1,5 +1,6 @@
 <?php
-session_start();
+include "navbar.php";
+include 'checkAuthentication.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +16,6 @@ session_start();
     <title>All Students</title>
 </head>
 <body>
-<?php
-    include "navbar.php";
-?>
 <div class="container my-5">
 
     <?php
