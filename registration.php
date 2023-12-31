@@ -1,5 +1,6 @@
 <?php
 session_start(); // Start the session
+include "dbConnection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,20 +102,10 @@ session_start(); // Start the session
 
     <?php
 
-        $servername = "localhost";
-        $username = "root";
-        $db_password = "";
-        $database = "php-crud";
-
-        $connection = new mysqli($servername, $username, $db_password, $database);
-
-        if ($connection->connect_error) {
-            die("Connection failed: " . $connection->connect_error);
-        }
         $name = "";
         $email = "";
         $phone = "";
-        $password = "";
+        $user_password = "";
         $errorMessage = null;
         $successMessage = null;
 
@@ -126,16 +117,16 @@ session_start(); // Start the session
             $name = $_POST['name'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
-            $password = $_POST['password'];
+            $user_password = $_POST['password'];
 
             do {
-                if (empty($name) || empty($email) || empty($phone) || empty($password)) {
+                if (empty($name) || empty($email) || empty($phone) || empty($user_password)) {
                     $errorMessage = "All fields are required!";
                     /*$_SESSION['errorMessage'] = "All fields are required!";*/
                     break;
                 }
 
-                $sql = "INSERT INTO users (name, email, phone, password)" . "VALUES('$name', '$email', '$phone', '$password')";
+                $sql = "INSERT INTO users (name, email, phone, password)" . "VALUES('$name', '$email', '$phone', '$user_password')";
                 $result = $connection->query($sql);
 
                 if (!$result) {
