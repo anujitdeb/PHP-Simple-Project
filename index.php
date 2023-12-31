@@ -27,6 +27,17 @@ if (isset($_SESSION['errorMessage'])):
     </div>
     <?php
     unset($_SESSION['errorMessage']); // Clear the message
+
+elseif (isset($_SESSION['successMessage'])):
+    ?>
+    <div class='alert alert-danger alert-dismissible fade show' role='alert' style="width: 500px; margin-top: 5px; margin-left: 450px;">
+        <?php echo $_SESSION['successMessage']; ?>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+        </button>
+    </div>
+    <?php
+    unset($_SESSION['successMessage']); // Clear the message
 endif;
 ?>
 

@@ -1,5 +1,10 @@
 <?php
 session_start(); // Start the session
+include "dbConnection.php";
+
+if(isset($_SESSION['user'])){
+    header("Location: /php-simple-project/index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -114,16 +119,6 @@ session_start(); // Start the session
 
     <?php
 
-        $servername = "localhost";
-        $username = "root";
-        $db_password = "";
-        $database = "php-crud";
-
-        $connection = new mysqli($servername, $username, $db_password, $database);
-
-        if ($connection->connect_error) {
-            die("Connection failed: " . $connection->connect_error);
-        }
         $email = "";
         $password = "";
         $errorMessage = null;
